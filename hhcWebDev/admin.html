@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <title>HHC Admin Login</title>
+
+        <link rel="stylesheet" href="adminstyle.css">
+        <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;600;700&display=swap" rel="stylesheet">
+    </head>
+
+    <body>
+
+    <div class="header">
+        <img src="weblogo.png" alt="">
+        <h1>Happy Home Cleaners</h1>
+    </div>
+
+
+    <div class="login-wrapper">
+        <div class="login-box">
+            <h2>Admin Login</h2>
+
+            <form id="loginForm">
+                <div class="form-group">
+                    <label>Username</label>
+                    <input type="text" id="username" placeholder="Enter username" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Password</label>
+                    <input type="password" id="password" placeholder="Enter password" required>
+                </div>
+
+                <button type="submit" class="login-btn">Login</button>
+                <p id="error-msg">Invalid username or password !</p>
+            </form>
+
+  
+        </div>
+    </div>
+
+    <script>
+        document.getElementById("loginForm").addEventListener("submit", function(e) {
+            e.preventDefault();
+
+            const username = document.getElementById("username").value;
+            const password = document.getElementById("password").value;
+            const errorMsg = document.getElementById("error-msg");
+
+            // CORRECT CREDENTIALS
+            if (username === "admin" && password === "1234") {
+                errorMsg.style.display = "none";
+                alert("Login Successful!");
+                // window.location.href = "dashboard.html";
+            } else {
+                errorMsg.style.display = "block";
+            }
+        });
+    </script>
+
+</body>
+</html>
