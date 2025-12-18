@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <title>Home Cleaning Services</title>
+
+        <link rel="stylesheet" href="style.css">
+        <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;600;700&display=swap" rel="stylesheet">
+    </head>
+    
+    <body>
+        
+        <header>
+            <div class="container header-container">
+                <div class="logo">
+                    <img src="logo.png" alt="">
+                    <span>Happy Home Cleaners</span>
+                </div>
+                
+                <nav>
+                    <a href="#home">Home</a>
+                    <a href="#about">About</a>
+                    <a href="#services">Services</a>
+                    <a href="#contact">Contact</a>
+                </nav>
+            </div>
+        </header>
+
+
+        <section class="hero" id="home">
+            <div class="hero-content">
+                <h1>A Happy Home Begins<br>With a Clean Space</h1>
+                <p>Our trusted cleaning team treats your home with<br>care and attention!</p>
+                <a href="#booking" class="booking-btn">Book a Service</a>
+            </div>
+        </section>
+
+
+        <section class="about" id="about">
+            <div class="container">
+                <h2>Who We Are</h2>
+                <p class="about-text">
+                    Happy Home Cleaners is a reliable house cleaning service dedicated to creating
+                    clean, comfortable, and welcoming homes. We focus on quality service,
+                    attention to detail, and customer satisfaction.</p>
+                    
+                    <h3>Meet Our Team</h3>
+                    <div class="team">
+                        <div class="team-member">
+                            <img src="pfp.jpg" alt="Andrea">
+                            <h4>Andrea</h4>
+                            <p>Lead Cleaning Specialist</p>
+                        </div>
+            
+                        <div class="team-member">
+                            <img src="pfp.jpg" alt="Jarish Ann">
+                            <h4>Jarish Ann</h4>
+                            <p>Cleaning Technician</p>
+                        </div>
+            
+                        <div class="team-member">
+                            <img src="pfp.jpg" alt="Glaiza Mae">
+                            <h4>Glaiza Mae</h4>
+                            <p>Customer Support Assistant</p>
+                        </div>
+                    </div>
+                </div>
+        </section>
+
+
+        <section class="services" id="services">
+            <div class="container">
+                <h2>Our Services</h2>
+                <div class="service-cards">
+                    
+                    <div class="service-card">
+                        <img src="regularhomecleaning.jpg" alt="Regular Home Cleaning">
+                        <h3>Regular Home Cleaning</h3>
+                        <p>₱3,000</p>
+                        <a href="#booking" class="booking-btn">Click to book</a>
+                    </div>
+
+                    <div class="service-card">
+                        <img src="deepcleaning.jpg" alt="Deep Cleaning">
+                        <h3>Deep Cleaning</h3>
+                        <p>₱4,000</p>
+                        <a href="#booking" class="booking-btn">Click to book</a>
+                    </div>
+
+                    <div class="service-card">
+                        <img src="moveinoutcleaning.jpg" alt="Move In Move Out Cleaning">
+                        <h3>Move-In / Move-Out</h3>
+                        <p>₱3,300</p>
+                        <a href="#booking" class="booking-btn">Click to book</a>
+                    </div>
+
+                    <div class="service-card">
+                        <img src="postconstructioncleaning.jpg" alt="Post Construction Cleaning">
+                        <h3>Post-Construction</h3>
+                        <p>₱3,950</p>
+                        <a href="#booking" class="booking-btn">Click to book</a>
+                    </div>
+
+                    <div class="service-card">
+                        <img src="upholsteryandsofacleaning.jpg" alt="Upholstery Cleaning">
+                        <h3>Upholstery & Sofa</h3>
+                        <p>₱2,600</p>
+                        <a href="#booking" class="booking-btn">Click to book</a>
+                    </div>
+
+                    <div class="service-card">
+                        <img src="carpetandrugcleaning.jpg" alt="Carpet Cleaning">
+                        <h3>Carpet & Rug</h3>
+                        <p>₱3,580</p>
+                        <a href="#booking" class="booking-btn">Click to book</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <section id="booking" class="booking">
+            <div class="container">
+                <h2>Let us happily refresh your home!</h2>
+                
+                <form class="booking-form" method="POST" action="booking_create.php">
+                    
+                    <label for="full_name">Full Name</label>
+                    <input type="text" id="full_name" name="full_name" required>
+
+                    <label for="phone_number">Contact Number</label>
+                    <input type="tel" id="phone_number" name="phone_number" maxlength="11" required>
+
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email_address" name="email_address" required>
+
+                    <label for="service">Service</label>
+                    <select id="service" name="service" required>
+                        <option value="">Select a service</option>
+                        <option>Regular Home Cleaning</option>
+                        <option>Deep Cleaning</option>
+                        <option>Move-In / Move-Out</option>
+                        <option>Post-Construction</option>
+                        <option>Upholstery & Sofa</option>
+                        <option>Carpet & Rug</option>
+                    </select>
+
+                    <label for="preferred_date">Preferred Date</label>
+                    <input type="date" id="preferred_date" name="preferred_date" required>
+
+                    <label for="inquiry_or_message">Inquiry / Message</label>
+                    <textarea id="inquiry_or_message" name="inquiry_or_message" rows="3"></textarea>
+
+                    <button type="submit" name="insertSub" class="submit-btn">Book Now</button>
+
+                </form>
+            </div>
+        </section>
+
+        <section class="contact" id="contact">
+            <div class="container">
+                <div>Happy Home Cleaners</div>
+                <span>|</span>
+        
+                <div>123 Cleaners Street</div>
+                <span>|</span>
+        
+                <div>0912-345-6789<br>happyhome@cleaners.com</div>
+                <span>|</span>
+        
+                <div>Opening Hours: 9AM - 7PM</div>
+            </div>
+        </section>
+    </body>
+</html>
