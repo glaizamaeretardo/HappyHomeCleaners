@@ -8,7 +8,7 @@
 body {
     font-family: 'Comfortaa', sans-serif;
     line-height: 1.6;
-    color: #333;
+    color: #2A3335;
     padding-top: 50px;
 }
 
@@ -38,7 +38,7 @@ h2 {
     font-family: 'Comfortaa', sans-serif;
     text-decoration: none;
     transition: 0.3s;
-    background: #068bdb;
+    background: #43817F;
     color: white;
     cursor: pointer;
     text-align: center;
@@ -47,7 +47,7 @@ h2 {
 
 .booking-btn:hover {
     background: white;
-    color: black;
+    color: #2A3335;
 }
 
 .submit-btn {
@@ -57,7 +57,7 @@ h2 {
     font-weight: 700;
     font-family: 'Comfortaa', sans-serif;
     transition: 0.3s;
-    background: #068bdb;
+    background: #43817F;
     color: white;
     cursor: pointer;
     border: none;
@@ -66,7 +66,7 @@ h2 {
 
 .submit-btn:hover {
     background: white;
-    color: black;
+    color: #333;
 }
 
 
@@ -74,7 +74,7 @@ header {
     position: fixed;
     top: 0;
     width: 100%;
-    background: white;
+    background: #FBFFE4;
     box-shadow: 0 2px 8px rgba(0,0,0,0.1);
     z-index: 100;
     padding: 15px 0;
@@ -94,6 +94,7 @@ header {
 
 .logo img {
     width: 45px;
+    border-radius: 5px;
 }
 
 nav {
@@ -105,7 +106,7 @@ nav a {
     position: relative;
     font-weight: 600;
     text-decoration: none;
-    color: black;
+    color: #43817f;
     transition: color 0.2s; 
 }
 
@@ -146,7 +147,7 @@ nav a:hover::after {
 
 
 .about {
-    background: #f9f9f9; 
+    background: #FBFFE4; 
     padding: 80px 0;
     display: flex;
     flex-direction: column;
@@ -220,7 +221,7 @@ nav a:hover::after {
 
 
 .booking {
-    background: #f9f9f9;
+    background: #E4DE5F;
     padding: 80px 0;
     text-align: center;
 }
@@ -253,13 +254,14 @@ nav a:hover::after {
 
 
 .contact {
-    padding: 100px 0;
+    padding: 50px 0;
     display: flex;
     justify-content: center;
     gap: 50px;
     flex-wrap: wrap;
     font-weight: 900;
     text-align: center;
+    background: #FBFFE4;
 }
 
 .contact div {

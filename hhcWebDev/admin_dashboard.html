@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Admin Dashboard - Happy Home Cleaners</title>
+ <link rel="stylesheet" href="dashboard.css">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+<h1>Admin Dashboard - Home Cleaning Services</h1>
+
+<div class="dashboard-container">
+    <table id="bookingTable">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Full Name</th>
+                <th>Email</th>
+                <th>Phone</th>
+                <th>Service</th>
+                <th>Date</th>
+                <th>Message</th>
+                <th>Status</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody id="tableBody"></tbody>
+    </table>
+
+    <button class="logout-btn" onclick="logout()">Logout</button>
+</div>
+
+<script>
+
+function loadTable() {
+    fetch("load_bookings.php", { cache: "no-store" })
+    .then(res => res.json())
+    .then(data => {
+        let tbody = document.getElementById("tableBody");
+        tbody.innerHTML = "";
+
+        data.forEach(row => {
+            tbody.innerHTML += `
+                <tr>
+                    <td>${row.id}</td>
+                    <td>${row.full_name}</td>
+                    <td>${row.email_address}</td>
+                    <td>${row.phone_number}</td>
+                    <td>${row.service}</td>
+                    <td>${row.preferred_date}</td>
+                    <td>${row.inquiry_or_message}</td>
+                    <td>${row.status}</td>
+                    <td>
+                        <select onchange="handleAction(this.value, ${row.id})" class="action-dropdown">
+                            <option value="">Select Action</option>
+                            <option value="approve">Approve</option>
+                            <option value="decline">Decline</option>
+                            <option value="edit">Edit</option>
+                            <option value="delete">Delete</option>
+                        </select>
+                    </td>
+                </tr>
+            `;
+        });
+    });
+}
+
+
+function handleAction(action, id) {
+    if (action === "edit") {
+        let newName = prompt("Enter new Full Name:");
+        let newEmail = prompt("Enter new Email:");
+        let newPhone = prompt("Enter new Phone Number:");
+        let newService = prompt("Enter new Service:");
+        let newDate = prompt("Enter new Date (YYYY-MM-DD):");
+        let newMessage = prompt("Enter new Message:");
+        let newStatus = prompt("Enter new Status (Pending, Approved, Declined):");
+
+        if (!newName || !newEmail || !newPhone || !newService || !newDate || !newStatus) {
+            alert("All fields are required.");
+            return;
+        }
+
+        fetch("update_bookings.php", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+                id, full_name: newName, email_address: newEmail, phone_number: newPhone,
+                service: newService, preferred_date: newDate, inquiry_or_message: newMessage, status: newStatus
+            })
+        })
+        .then(res => res.text())
+        .then(() => loadTable());
+        return;
+    }
+
+    if (action === "delete") {
+        if (!confirm("Are you sure you want to delete this booking?")) return;
+    }
+
+    fetch(`${action}.php?action=${action}&id=${id}`)
+.then(() => loadTable());
+
+}
+
+function logout() {
+    window.location.href = "logout.php";
+}
+
+loadTable();
+
+setInterval(loadTable, 5000);
+</script>
+
+</body>
+</html>

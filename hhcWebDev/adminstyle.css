@@ -37,7 +37,6 @@ body {
     border-radius: 5px;
 }
 
-
 .login-wrapper {
     display: flex;
     justify-content: center;
@@ -59,6 +58,7 @@ body {
     margin-bottom: 25px;
     font-size: 25px;
 }
+
 
 .form-group {
     margin-bottom: 18px;
@@ -94,12 +94,14 @@ body {
     color: black;
 }
 
+
 #error-msg {
     color: red;
     text-align: center;
     margin-top: 17px;
     display: none;
 }
+
 
 .footer-text {
     text-align: center;
